@@ -11,10 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('costumer_tabel', function (Blueprint $table) {
+        Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("email");
+            $table->bigInteger('user_id');
             $table->string("phone");
             $table->string("addres");
             $table->timestamps();
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('costumer_tabel');
+        Schema::dropIfExists('customers');
     }
 };
